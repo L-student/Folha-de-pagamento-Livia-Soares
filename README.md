@@ -15,6 +15,6 @@ This repository is destined for a final project to the discipline "Software Proj
 | 9 | Payment Schedule | Cada empregado é pago de acordo com uma "agenda de pagamento". Empregados podem selecionar a agenda de pagamento que desejam. Por default, as agendas "semanalmente", "mensalmente" e "bi- semanalmente" são usadas, como explicado na descricao geral. Posteriormente, um empregado pode pedir para ser pago de acordo com qualquer uma dessas agendas. | :x: |
 | 10 | Creating New Payment Schedules | A direção da empresa pode criar uma nova agenda de pagamento e disponibilizá-la para os empregados escolherem, se assim desejarem. Uma agenda é especificada através de um string. Alguns exemplos mostram as possibilidades: "mensal 1": dia 1 de todo mês "mensal 7": dia 7 de todo mês "mensal $": último dia útil de todo mês "semanal 1 segunda": toda semana às segundas-feiras "semanal 1 sexta": toda semana às sextas-feiras "semanal 2 segunda": a cada 2 semanas às segundas-feiras | :x: |
 
-This project will be created using Python on Visual Code Studios. For a better experience, it will be used a library for a graphic interface (GUI).
+This project will be created using Python on Visual Code Studios. For a better experience, it will be used a library for a graphic user interface (GUI).
 
 ### Under development.
