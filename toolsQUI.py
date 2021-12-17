@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QToolTip, QLable
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QToolTip, QLabel
 
 
 class window(QMainWindow):
@@ -88,11 +88,11 @@ class window(QMainWindow):
 
         #Lable------------------------------------------------------------------------------------------------------------------------------
 
-        Lable1 = QLable(self)
+        Lable1 = QLabel(self)
         Lable1.setText('Folha de pagamento')
         Lable1.move(80,600)
         Lable1.resize(150,300)
-        Lable1.setStyleSheet('QLable{ font: bold; font-size: 14px}')
+        Lable1.setStyleSheet('QLabel{ font: bold; font-size: 14px}')
 
 
         self.CarregarJanela()
