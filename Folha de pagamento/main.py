@@ -15,7 +15,7 @@ import time
 def main():
     print("\nFolha de pagamento.\n")
     print("Seja bem vindo/a!!\nPor favo, selecione a opção desejada: \n\n")
-    print("1) Adição de um empregado;\n2) Remoção de um empregado;\n3) Alterar detalhes de um empregado;\n4) Lançar um Cartão de Ponto; \n5) Lançar um Resultado Venda;\n6) Lançar uma taxa de serviço;\n7) Rodar a folha de pagamento para hoje;\n8) Undo/redo;\n9) Agenda de Pagamento;\n10) Criação de Novas Agendas de Pagamento;\n11) Mostrar lista de empregados\n12) Mostrar lista dos funcionários no sindicato \n13) Sair\n")
+    print("1) Adição de um empregado;\n2) Mostrar lista de empregados\n3) Alterar detalhes de um empregado;\n4) Lançar um Cartão de Ponto; \n5) Lançar um Resultado Venda;\n6) Lançar uma taxa de serviço;\n7) Rodar a folha de pagamento para hoje;\n8) Undo/redo;\n9) Agenda de Pagamento;\n10) Criação de Novas Agendas de Pagamento;\n11) Mostrar lista de empregados do sindicato\n12) Remoção de um empregado; \n13) Sair\n")
     number = int(input(""))
     num = 0
     numR = 0
@@ -67,32 +67,34 @@ def main():
                 empregados.insert(num, newEmployee)
             
             print("Novo funcionário adicionado com sucesso!")
-            
+            salarios.insert(num,0)
             num = num + 1
             numR = numR + 1
             
+            
 
-        elif(number == 2):
+        elif(number == 12):
             #remover um empregado
             print("\n | ID|  Nome    | Tipo | Endereço | No sindicato |")
             rand = 0 
             while(rand != numR  ):
                 print(empregados[rand])
                 rand = rand + 1
+            
             id = int(input("Insira o id do empregado que deseja retirar do sistema: \n"))
+            salarios.pop(id)
             empregados.pop(id)
             print("Funcionário removido com sucesso!")
             numR = numR - 1
 
         elif(number == 3):
             #Alterar detalhes de um empregado
-            print("\n | ID|  Nome    | Tipo | Endereço | No sindicato |")
             change = int(input("O que deseja alternar no empregado?\n(1)Nome\n(2)Tipo\n(3)Endereço\n(4)Status no sindicato\n"))
             if(change == 1):
                 #muda o nome
                 print("\n | ID|  Nome    | Tipo | Endereço | No sindicato |")
                 rand = 0 
-                while(rand != numR  ):
+                while(rand != numR):
                     print(empregados[rand])
                     rand = rand + 1
                 id = int(input("Insira o id do empregado que deseja alterar o nome: \n"))
@@ -221,14 +223,14 @@ def main():
         
         elif(number == 6):
             #Lançar uma taxa de serviço;
-            print("\n | ID|  Nome    | Tipo | Endereço | No sindicato |")
+            print("\n | ID|  Nome  | Tipo | Taxa sindical |")
             rand4 = 0
             while(rand4 != numS  ):
                 print(sindicato[rand4])
                 rand4 = rand4 + 1
             print("\n")
             id = int(input("Insira o id do empregado do sindicato que deseja lançar uma taxa de serviço: \n"))
-            taxaNova = empregados[id].extra_taxa()
+            taxaNova = sindicato[id].extra_taxa()
             txn = salarios[id] + taxaNova
             salarios.insert(id, txn)
             print("Operação realizada com sucesso!\n")
@@ -314,7 +316,7 @@ def main():
 
             arquivo.close()
             print("Operação realizada com sucesso!\n")
-        elif(number == 11):
+        elif(number == 2):
             print("\n | ID|  Nome    | Tipo | Endereço |No sindicato |")
             rand12 = 0
             while(rand12 != numR  ):
@@ -322,7 +324,7 @@ def main():
                 rand12 = rand12 + 1
             print("\n")
             #mostrar lista de empregados
-        elif(number == 12):
+        elif(number == 11):
             print("\n | ID|  Nome  | Tipo | Taxa sindical |")
             rand1 = 0
             while(rand1 != numS  ):
@@ -333,12 +335,12 @@ def main():
             return
         else:
             print("Entrada inválida")
-
+        
+        actions.insert(number_actions,number)
         number_actions = number_actions + 1
         print("\nFolha de pagamento.\n")
-        number = int(input("Porfavor, selecione a opção desejada: \n1) Adição de um empregado;\n2) Remoção de um empregado;\n3) Alterar detalhes de um empregado;\n4) Lançar um Cartão de Ponto; \n5) Lançar um Resultado Venda; \n6) Lançar uma taxa de serviço;\n7) Rodar a folha de pagamento para hoje;\n8) Undo/redo;\n9) Agenda de Pagamento;\n10) Criação de Novas Agendas de Pagamento;\n11) Mostrar lista de empregados\n12) Mostrar lista dos funcionários no sindicato \n13) Sair\n"))
-
-    
+        number = int(input("1) Adição de um empregado;\n2) Mostrar lista de empregados\n3) Alterar detalhes de um empregado;\n4) Lançar um Cartão de Ponto; \n5) Lançar um Resultado Venda;\n6) Lançar uma taxa de serviço;\n7) Rodar a folha de pagamento para hoje;\n8) Undo/redo;\n9) Agenda de Pagamento;\n10) Criação de Novas Agendas de Pagamento;\n11) Mostrar lista de empregados do sindicato\n12) Remoção de um empregado; \n13) Sair\n"))
+  
 main()
 
 
