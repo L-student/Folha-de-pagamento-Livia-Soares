@@ -21,11 +21,11 @@ class Sindicate():
     def get_taxa_sindical(self):
         return self.taxa_sincial
     def set_taxa_sindical(self):
-        novaTaxa = float(input("Insira aqui a nova taxa sindical %: \n"))
+        novaTaxa = input("Insira aqui a nova taxa sindical %: \n")
         self.taxa_sincial = novaTaxa
     
     def extra_taxa(self):
-        novaTaxa = float(input("Insira aqui a nova taxa sindical %: \n"))
+        novaTaxa = int(input("Insira aqui a nova taxa sindical %: \n"))
         return novaTaxa
 
         
